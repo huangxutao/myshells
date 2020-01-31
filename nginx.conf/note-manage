@@ -1,0 +1,12 @@
+server {
+    listen 80;
+    listen [::]:80;
+    server_name note-manage._DOMAIN_;
+    root _STATICPATH_;
+    index index.html;
+
+    location / {
+        add_header 'strict-transport-security' 'max-age=31536000; includeSubDomains; preload';
+        try_files $uri $uri/ /index.html;
+    }
+}
