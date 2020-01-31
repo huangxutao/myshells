@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# set -e
-set -o errexit
+set -e
+# set -o errexit
 
 source ./utils/get-domain.sh  # get domain & import variable -> rootDomain
 source ./utils/set-tmp.sh  # set tmp dir & import variable -> tmpDir
@@ -105,7 +105,7 @@ setManage() {
 setTheme() {
   echo "🛵🛵🛵  note 主题安装"
 
-  basePath="/note-life\/note"
+  basePath="/note-life/note"
   branch="note.hxtao.xyz"
   staticPATH="$wwwDir$basePath"
   repository=$themeGitRepository
