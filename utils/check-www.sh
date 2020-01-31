@@ -1,6 +1,6 @@
 #!/bin/bash
 
-wwwDir="./www"
+wwwDir="/www"
 noteLifeDir="$wwwDir/note-life"
 howOldDir="$wwwDir/how-old"
 

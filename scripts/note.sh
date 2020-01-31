@@ -24,7 +24,7 @@ saveMv() {
 
 
 rootDir=`pwd`
-nginxDir='nginx'
+nginxDir='/etc/nginx'
 
 echo "=========================================================="
 echo "🟢  root domian: $rootDomain"
@@ -66,6 +66,7 @@ setCore() {
   cp "$rootDir/nginx.conf/note-api" "$nginxDir/sites-available/"
   ln -s "$nginxDir/sites-available/note-api" "$nginxDir/sites-enabled/note-api"
   sed -ie "s/_DOMAIN_/$rootDomain/" "$nginxDir/sites-available/note-api"
+  rm "$nginxDir/sites-available/note-apie"
   systemctl reload nginx
   echo "✅ nginx ok."
 
@@ -76,6 +77,7 @@ setCore() {
 }
 
 setManage() {
+  echo "🛵🛵🛵  note 后台管理安装"
   basePath="/note-life/manage"
   branch="note-manage.hxtao.xyz"
   repository=$manageGitRepository
@@ -96,11 +98,15 @@ setManage() {
   cp "$rootDir/nginx.conf/note-manage" "$nginxDir/sites-available/"
   ln -s "$nginxDir/sites-available/note-manage" "$nginxDir/sites-enabled/note-manage"
   sed -ie "s/_DOMAIN_/$rootDomain/" "$nginxDir/sites-available/note-manage"
+  rm "$nginxDir/sites-available/note-managee"
   systemctl reload nginx
   echo "✅ nginx ok."
+  echo ""
 }
 
 setTheme() {
+  echo "🛵🛵🛵  note 主题安装"
+
   basePath="/note-life\/note"
   branch="note.hxtao.xyz"
   staticPATH="$wwwDir$basePath"
@@ -126,11 +132,12 @@ setTheme() {
   rm "$nginxDir/sites-available/notee"
   systemctl reload nginx
   echo "✅ nginx ok."
+  echo ""
 }
 
-# setCore
+setCore
 
-# setManage
+setManage
 
 setTheme
 
