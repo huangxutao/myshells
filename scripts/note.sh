@@ -68,12 +68,10 @@ setCore() {
   sed -ie "s/_DOMAIN_/$rootDomain/" "$nginxDir/conf.d/note-api.conf"
   rm "$nginxDir/conf.d/note-api.confe"
   systemctl reload nginx
-  echo "✅ nginx ok."
 
   # 数据库同步
   echo "🛠️  数据库同步..."
   # mongorestore -h 127.0.0.1:27017 -d note_life <path>
-  echo "✅ 数据库同步 ok."
   echo ""
 }
 
@@ -100,7 +98,6 @@ setManage() {
   sed -ie "s/_DOMAIN_/$rootDomain/" "$nginxDir/conf.d/note-manage.conf"
   rm "$nginxDir/conf.d/note-manage.confe"
   systemctl reload nginx
-  echo "✅ nginx ok."
   echo ""
 }
 
@@ -130,7 +127,6 @@ setTheme() {
   sed -ie "s:_DOMAIN_:${rootDomain}:" "$nginxDir/conf.d/note.conf"
   rm "$nginxDir/conf.d/note.confe"
   systemctl reload nginx
-  echo "✅ nginx ok."
   echo ""
 }
 
