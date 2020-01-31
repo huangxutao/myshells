@@ -40,6 +40,7 @@ manageGitRepository="https://github.com/note-life/manage-default.git"
 themeGitRepository="https://github.com/note-life/theme-default.git"
 
 setCore() {
+  echo "🛵🛵🛵  note api 安装"
   basePath="/note-life/core"
   branch="master"
   repository=$coreGitRepository
@@ -73,6 +74,7 @@ setCore() {
   echo "🛠️  数据库同步..."
   # mongorestore -h 127.0.0.1:27017 -d note_life <path>
   echo "✅ 数据库同步 ok."
+  echo ""
 }
 
 setManage() {
