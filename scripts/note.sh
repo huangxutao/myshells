@@ -75,6 +75,7 @@ setManage() {
   echo "🛵🛵🛵  note 后台管理安装"
   basePath="/note-life/manage"
   branch="note-manage.hxtao.xyz"
+  staticPATH="$wwwDir$basePath/dist"
   repository=$manageGitRepository
   codeDir="$tmpDir$basePath"
 
