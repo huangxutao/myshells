@@ -16,7 +16,7 @@ chmod +x ./scripts/how-old.sh && sudo ./scripts/how-old.sh
 
 ## others
 
-nginx 防火墙
+centos 防火墙
 
 ```bash
 firewall-cmd --permanent --zone=public --add-service=https --add-service=http
