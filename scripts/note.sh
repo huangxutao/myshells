@@ -40,6 +40,7 @@ manageGitRepository="https://github.com/note-life/manage-default.git"
 themeGitRepository="https://github.com/note-life/theme-default.git"
 
 setCore() {
+  echo ""
   echo "🛵🛵🛵  note api 安装"
   basePath="/note-life/core"
   branch="master"
@@ -56,12 +57,6 @@ setCore() {
   echo "🛠️  移动目录到 www..."
   saveMv $codeDir $wwwDir$basePath
 
-  # 安装依赖
-  echo "🛠️  安装依赖..."
-  echo "> cd $wwwDir$basePath && npm i && cd $rootDir"
-  cd $wwwDir$basePath && npm i && cd $rootDir
-  echo ""
-
   # 配置 nginx
   echo "🛠️  配置 nginx..."
   cp "$rootDir/nginx.conf/note-api.conf" "$nginxDir/conf.d/"
@@ -76,6 +71,7 @@ setCore() {
 }
 
 setManage() {
+  echo ""
   echo "🛵🛵🛵  note 后台管理安装"
   basePath="/note-life/manage"
   branch="note-manage.hxtao.xyz"
@@ -102,6 +98,7 @@ setManage() {
 }
 
 setTheme() {
+  echo ""
   echo "🛵🛵🛵  note 主题安装"
 
   basePath="/note-life/note"
