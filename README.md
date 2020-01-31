@@ -40,3 +40,7 @@ mongorestore -h 127.0.0.1:27017 -d <dbname> <path>
 ```bash
 scp -r /home/a.js root@192.168.1.8:/home
 ```
+
+#### mongodb
+
+<https://docs.mongodb.com/manual/tutorial/install-mongodb-on-red-hat/>

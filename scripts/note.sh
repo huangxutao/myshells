@@ -91,6 +91,7 @@ setManage() {
   # 配置 nginx
   echo "🛠️  配置 nginx..."
   cp "$rootDir/nginx.conf/note-manage.conf" "$nginxDir/conf.d/"
+  sed -ie "s:_STATICPATH_:${staticPATH}:" "$nginxDir/conf.d/note-manage.conf"
   sed -ie "s/_DOMAIN_/$rootDomain/" "$nginxDir/conf.d/note-manage.conf"
   rm "$nginxDir/conf.d/note-manage.confe"
   systemctl reload nginx
@@ -103,7 +104,7 @@ setTheme() {
 
   basePath="/note-life/note"
   branch="note.hxtao.xyz"
-  staticPATH="$wwwDir$basePath"
+  staticPATH="$wwwDir$basePath/dist"
   repository=$themeGitRepository
   codeDir="$tmpDir$basePath"
 
