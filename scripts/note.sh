@@ -66,7 +66,7 @@ setCore() {
   echo "🛠️  配置 nginx..."
   cp "$rootDir/nginx.conf/note-api.conf" "$nginxDir/conf.d/"
   sed -ie "s/_DOMAIN_/$rootDomain/" "$nginxDir/conf.d/note-api.conf"
-  # rm "$nginxDir/conf.d/note-api.confe"
+  rm "$nginxDir/conf.d/note-api.confe"
   systemctl reload nginx
   echo "✅ nginx ok."
 
@@ -98,7 +98,7 @@ setManage() {
   echo "🛠️  配置 nginx..."
   cp "$rootDir/nginx.conf/note-manage.conf" "$nginxDir/conf.d/"
   sed -ie "s/_DOMAIN_/$rootDomain/" "$nginxDir/conf.d/note-manage.conf"
-  # rm "$nginxDir/conf.d/note-manage.confe"
+  rm "$nginxDir/conf.d/note-manage.confe"
   systemctl reload nginx
   echo "✅ nginx ok."
   echo ""
@@ -128,7 +128,7 @@ setTheme() {
   cp "$rootDir/nginx.conf/note.conf" "$nginxDir/conf.d/"
   sed -ie "s:_STATICPATH_:${staticPATH}:" "$nginxDir/conf.d/note.conf"
   sed -ie "s:_DOMAIN_:${rootDomain}:" "$nginxDir/conf.d/note.conf"
-  # rm "$nginxDir/conf.d/note.confe"
+  rm "$nginxDir/conf.d/note.confe"
   systemctl reload nginx
   echo "✅ nginx ok."
   echo ""
