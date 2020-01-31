@@ -2,9 +2,11 @@
 
 set -e
 
-source ./utils/get-domain.sh  # get domain & import variable -> rootDomain
-source ./utils/set-tmp.sh  # set tmp dir & import variable -> tmpDir
-source ./utils/check-www.sh  # checkdir & import variable -> wwwDir
+if [[ $1 != 'direct' ]]; then
+  source ./utils/get-domain.sh  # get domain & import variable -> rootDomain
+  source ./utils/set-tmp.sh  # set tmp dir & import variable -> tmpDir
+  source ./utils/check-www.sh  # checkdir & import variable -> wwwDir
+fi
 
 gitRepository="https://github.com/huangxutao/how-old-server.git"
 
