@@ -10,7 +10,7 @@ fi
 
 gitRepository="https://github.com/huangxutao/how-old-server.git"
 
-setCore() {
+install() {
   echo ""
   echo "🛵🛵🛵  how old server 安装"
   basePath="/how-old-server"
@@ -35,3 +35,5 @@ setCore() {
   rm "$nginxDir/conf.d/how-old-server.confe"
   systemctl reload nginx
 }
+
+install
