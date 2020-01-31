@@ -5,11 +5,11 @@
 安装我的所有服务
 
 ```bash
-sudo chmod +x ./install.sh && ./install.sh
+chmod +x ./install.sh && sudo ./install.sh
 ```
 
 安装某一个服务
 
 ```bash
-sudo chmod +x ./scripts/how-old.sh && ./scripts/how-old.sh
+chmod +x ./scripts/how-old.sh && sudo ./scripts/how-old.sh
 ```
