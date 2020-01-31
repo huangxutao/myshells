@@ -64,8 +64,8 @@ setCore() {
   # 配置 nginx
   echo "🛠️  配置 nginx..."
   cp "$rootDir/nginx.conf/note-api.conf" "$nginxDir/conf.d/"
-  sed -ie "s/_DOMAIN_/$rootDomain/" "$nginxDir/sites-available/note-api.conf"
-  # rm "$nginxDir/sites-available/note-api.confe"
+  sed -ie "s/_DOMAIN_/$rootDomain/" "$nginxDir/conf.d/note-api.conf"
+  # rm "$nginxDir/conf.d/note-api.confe"
   systemctl reload nginx
   echo "✅ nginx ok."
 
@@ -95,8 +95,8 @@ setManage() {
   # 配置 nginx
   echo "🛠️  配置 nginx..."
   cp "$rootDir/nginx.conf/note-manage.conf" "$nginxDir/conf.d/"
-  sed -ie "s/_DOMAIN_/$rootDomain/" "$nginxDir/sites-available/note-manage.conf"
-  # rm "$nginxDir/sites-available/note-manage.confe"
+  sed -ie "s/_DOMAIN_/$rootDomain/" "$nginxDir/conf.d/note-manage.conf"
+  # rm "$nginxDir/conf.d/note-manage.confe"
   systemctl reload nginx
   echo "✅ nginx ok."
   echo ""
@@ -124,9 +124,9 @@ setTheme() {
   # 配置 nginx
   echo "🛠️  配置 nginx..."
   cp "$rootDir/nginx.conf/note.conf" "$nginxDir/conf.d/"
-  sed -ie "s:_STATICPATH_:${staticPATH}:" "$nginxDir/sites-available/note.conf"
-  sed -ie "s:_DOMAIN_:${rootDomain}:" "$nginxDir/sites-available/note.conf"
-  # rm "$nginxDir/sites-available/note.confe"
+  sed -ie "s:_STATICPATH_:${staticPATH}:" "$nginxDir/conf.d/note.conf"
+  sed -ie "s:_DOMAIN_:${rootDomain}:" "$nginxDir/conf.d/note.conf"
+  # rm "$nginxDir/conf.d/note.confe"
   systemctl reload nginx
   echo "✅ nginx ok."
   echo ""
